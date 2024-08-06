@@ -148,7 +148,7 @@ html[sizemode="maximized"] #titlebar #TabsToolbar {
     color: #E76463 !important;
 }
 .urlbarView {
-    background: #333C4A !important;
+    background: #000000 !important;
 }
 .urlbarView-row:not([type="tip"], [type="dynamic"])[selected] > .urlbarView-row-inner, .urlbarView-row-inner[selected] {
 	background: #A8BFE16E !important;
@@ -247,7 +247,7 @@ tab[selected="true"] .tab-content .tab-close-button.close-icon:hover {
 }
 
 panelview {
-	background: #333C4A !important;
+	background: #000000 !important;
 }
 panelview .toolbarbutton-1:not([disabled], [open], :active):is(:hover), toolbarbutton.subviewbutton:not([disabled], [open], :active):is(:hover), .navigable.subviewbutton:not([disabled], [open], :active):is(:hover), menu.subviewbutton:not([disabled], :active)[_moz-menuactive], menuitem.subviewbutton:not([disabled], :active)[_moz-menuactive], .widget-overflow-list .toolbarbutton-1:not([disabled], [open], :active):is(:hover), .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton:not([disabled], [open], :active):is(:hover),
 .all-tabs-item:hover {
@@ -273,4 +273,5 @@ searchbar#searchbar {
 }
 
 }
+
 
