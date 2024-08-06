@@ -1,0 +1,67 @@
+live_config_reload = true
+
+[colors.bright]
+black = "0x6B7280"
+blue = "0x89ddff"
+cyan = "0xadd7ff"
+green = "0xB1E3AD"
+magenta = "0x938AA9"
+red = "0xFCA5A5"
+white = "0xA5F3FC"
+yellow = "0xFBC19D"
+
+[colors.cursor]
+cursor = "0xD1D5DB"
+text = "0x111827"
+
+[colors.normal]
+black = "0x1b1e28"
+blue = "0x89ddff"
+cyan = "0x70BAFF"
+green = "0x5de4c7"
+magenta = "0xfcc5e9"
+red = "0xd0679d"
+white = "0xffffff"
+yellow = "0xfffac2"
+
+[colors.primary]
+# background = "#1b1e28"
+background = "#000000"
+foreground = "#86dbeb"
+
+[cursor]
+blink_interval = 550
+unfocused_hollow = false
+
+[cursor.style]
+shape = "block"
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 7
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Mono"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font Mono"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Mono"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+
+[selection]
+save_to_clipboard = false
+
+[window]
+decorations = "none"
+opacity = 1.0
+
+[window.padding]
+x = 18
+y = 18
+

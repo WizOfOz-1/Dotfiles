@@ -1,0 +1,44 @@
+snippet print "Variable Declaration"
+    System.out.println(${1});
+
+snippet fprint "Variable Declaration"
+    System.out.printf("${1}",${2});
+
+snippet v "Variable Declaration"
+    ${1:type} ${2:name} = ${3:value};
+
+snippet if "If Statement"
+    if (${1:condition}) {
+        ${2}
+    }
+
+snippet eif "If-Else Statement"
+    if (${1:condition}) {
+        ${2}
+    } else {
+        ${3}
+    }
+
+snippet for "For Loop"
+    for (${1:int i = 0}; ${2:i < length}; ${3:i++}) {
+        ${4}
+    }
+
+
+snippet meth "Method Definition"
+    public ${1:void} ${2:methodName}(${3:parameters}) {
+        ${4}
+    }
+
+snippet class "Class Definition"
+    public class ${1:ClassName} {
+        ${2}
+    }
+
+snippet def "Basic Java Class with Main Method"
+    public class ${1:ClassName} {
+        public static void main(String[] args) {
+            ${2:System.out.println("Hello, World!");}
+        }
+    }
+

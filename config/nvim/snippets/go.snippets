@@ -1,0 +1,67 @@
+snippet v "Variable Decleration"
+    ${1} := ${2}
+
+snippet if "If Statement"
+    if ${1:case}{
+        ${2}
+    }
+
+snippet iferr "If err != nil"
+    if err != nil{
+            panic(err)
+        }
+
+snippet eif "If - Else"
+    if ${1:case}{
+        ${2}
+    }else{
+        ${3}
+    }${4}
+
+snippet pkm "Package main"
+    package main
+
+    func main(){
+        ${0}
+    }
+
+snippet pk "Package"
+    package ${1:Package_Name}
+    import (
+        ${2:Imports} 
+    )
+
+    func ${3:Func}(${4:params}){
+        ${5}
+    }
+
+
+snippet fn "Function"
+    func ${1}(){
+            ${2}
+        }
+
+snippet meth "Method"
+    func (${1}) ${2}(${3}){
+            ${4}
+        }
+
+snippet pfn "Function With Params"
+    func ${1}(${2}){
+            ${3}
+        }
+
+snippet fori "For i loop"
+    for i := ${1:start}; i <= ${2:End - Inclusive}; i++ {
+        ${3}
+    }
+
+snippet forr "For Range"
+    for ${1:key},${2:value} := range ${3:Val}{
+            ${4}
+    }
+
+snippet type "Struct"
+    type ${1:StructName} struct{
+            ${2}
+        }${3}
