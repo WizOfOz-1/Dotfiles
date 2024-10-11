@@ -29,6 +29,7 @@ later(function()
         symbol = '|',
     })
 end)
+later(function() require("mini.extra").setup({}) end)
 -- Jump
 later(function() require("mini.jump2d").setup({ silent=true }) end)
 -- Move text
@@ -43,4 +44,3 @@ later(function() require("mini.surround").setup({silent=true}) end)
 later(function() require("mini.pick").setup({silent=true, mappings = { move_down = '<C-j>', move_up = '<C-k>', move_start = '<C-g>', }}) end)
 -- Files
 later(function() require("mini.files").setup({}) end)
--- Start Screen

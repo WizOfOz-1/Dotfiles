@@ -106,15 +106,15 @@ html[sizemode="maximized"] #titlebar #TabsToolbar {
 @media (prefers-color-scheme: dark) {
 
 #TabsToolbar > .titlebar-buttonbox-container {
-    background: #000000 !important;
+    background: #16161e !important;
 }
 	
 #titlebar #TabsToolbar {
-	background: #000000 !important;
+	background: #16161e !important;
 }
 
 .titlebar-button {
-    background-color: #000000 !important;
+    background-color: #16161e !important;
 	padding: 5px 5px !important;
 	margin-left: 26px !important;
 }
@@ -130,15 +130,15 @@ html[sizemode="maximized"] #titlebar #TabsToolbar {
 	stroke: #E76463 !important;
 }
 .titlebar-button:hover > .toolbarbutton-icon {
-	background: #000000 !important;
+	background: #16161e !important;
 }
 
 #nav-bar {
-	background: #000000 !important;
+	background: #16161e !important;
 }
 
 #urlbar-background {
-	background: #000000 !important;
+	background: #16161e !important;
 }
 #urlbar-input, #urlbar-scheme,
 .searchbar-textbox {
@@ -148,7 +148,7 @@ html[sizemode="maximized"] #titlebar #TabsToolbar {
     color: #E76463 !important;
 }
 .urlbarView {
-    background: #000000 !important;
+    background: #16161e !important;
 }
 .urlbarView-row:not([type="tip"], [type="dynamic"])[selected] > .urlbarView-row-inner, .urlbarView-row-inner[selected] {
 	background: #A8BFE16E !important;
@@ -195,7 +195,7 @@ toolbar #tabs-newtab-button:hover:not([disabled="true"]):not([checked]):not([ope
 #new-tab-button:hover > .toolbarbutton-icon,
 #scrollbutton-up:hover,
 #scrollbutton-down:hover {
-	background-color: #000000 !important;
+	background-color: #16161e !important;
 }
 
 toolbar#nav-bar.browser-toolbar #urlbar-container .urlbar-icon-wrapper,
@@ -243,11 +243,11 @@ tab[selected="true"] .tab-content .tab-close-button.close-icon:hover {
 }
 
 #PersonalToolbar {
-    background-color: #000000 !important;
+    background-color: #16161e !important;
 }
 
 panelview {
-	background: #000000 !important;
+	background: #16161e !important;
 }
 panelview .toolbarbutton-1:not([disabled], [open], :active):is(:hover), toolbarbutton.subviewbutton:not([disabled], [open], :active):is(:hover), .navigable.subviewbutton:not([disabled], [open], :active):is(:hover), menu.subviewbutton:not([disabled], :active)[_moz-menuactive], menuitem.subviewbutton:not([disabled], :active)[_moz-menuactive], .widget-overflow-list .toolbarbutton-1:not([disabled], [open], :active):is(:hover), .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton:not([disabled], [open], :active):is(:hover),
 .all-tabs-item:hover {
@@ -262,14 +262,14 @@ panelview .toolbarbutton-1:not([disabled], [open], :active):is(:hover), toolbarb
 /*================== SEARCH BAR ==================*/
 searchbar#searchbar {
 	border: 0 !important;
-	background-color: #000000 !important;
+	background-color: #16161e !important;
 	box-shadow: none !important;
 }
 
 /*================== SIDEBAR ==================*/
 #sidebar-box,
 .sidebar-panel[lwt-sidebar-brighttext] {
-	background-color: #000000 !important;
+	background-color: #16161e !important;
 }
 
 }

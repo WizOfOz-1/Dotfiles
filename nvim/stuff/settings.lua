@@ -17,12 +17,5 @@ vim.o.smartindent = true
 vim.o.autoindent = true
 vim.o.linebreak = true
 vim.o.undofile = false
-vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
-    pattern = '*.svelte',
-    callback = function()
-        print("working")
-        vim.schedule(function() 
-            vim.cmd('setlocal syntax=html')
-        end)
-    end
-})
+vim.opt.list = false
+vim.opt.hlsearch = false

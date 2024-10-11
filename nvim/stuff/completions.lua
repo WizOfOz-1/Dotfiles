@@ -136,10 +136,12 @@ later(function()
         capabilities = capabilities,
     })
 
-    lspconfig.svelte.setup({
+    lspconfig.ts_ls.setup({
         on_attach = on_attach,
+        hostInfo = "neovim",
         capabilities = capabilities,
-        filetypes = { "svelte" , "html"},
-        cmd = { "svelteserver", "--stdio" }
+        filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+        cmd = { "typescript-language-server", "--stdio" }
     })
+
 end)
