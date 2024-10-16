@@ -1,82 +1,6 @@
 require("mini.deps").setup({ path = { package = path_package } })
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
-later(function()
-    add({
-        source = 'hrsh7th/nvim-cmp',
-        depends = {'hrsh7th/cmp-nvim-lsp','hrsh7th/cmp-buffer','L3MON4D3/LuaSnip','saadparwaiz1/cmp_luasnip'}
-    })
-    vim.cmd [[highlight CmpBorderHighlight guifg = #43464e]]
-    vim.cmd [[highlight CmpBackgroundColor guifg = #352D39]]
-    vim.cmd [[highlight CmpSearchColor guifg = #80D39B]]
-    vim.cmd [[highlight CmpTest guifg = #ffffff]]
-    require("luasnip.loaders.from_snipmate").lazy_load({paths = "~/.config/nvim/snippets"})
-    local cmp = require("cmp")
-    local luasnip = require("luasnip")
-    luasnip.config.set_config({
-        region_check_events = 'InsertEnter',
-        delete_check_events = 'InsertLeave'
-    })
-    cmp.setup({
-        confirmation = { completeopt = 'menu,menuone,noinsert' },
-        preselect = cmp.PreselectMode.Item,
-        window = {
-            documentation = cmp.config.window.bordered(),
-            completion = cmp.config.window.bordered({
-                border = 'single',
-                winhighlight = 'Normal:CmpTest',
-            }),
-
-        },
-        snippet = {
-            expand = function(args)
-                require('luasnip').lsp_expand(args.body)
-            end,
-        },
-        completion = {
-            completeopt = 'menu,menuone,noinsert',
-        },
-        mapping = {
-            ["<C-k>"] = cmp.mapping.select_prev_item(),
-            ["<C-j>"] = cmp.mapping.select_next_item(),
-            ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-            ["<C-f>"] = cmp.mapping.scroll_docs(4),
-            ["<C-e>"] = cmp.mapping.abort(),
-            ["<Tab>"] = cmp.mapping(function (fallback)
-                if luasnip.expandable() then 
-                    luasnip.expand()
-                elseif cmp.visible() then
-                    cmp.confirm({
-                        behavior = cmp.ConfirmBehavior.Insert,
-                        select = true,
-                    })
-                elseif luasnip.locally_jumpable(1) then
-                    luasnip.jump(1)
-                else
-                    fallback()
-                end
-            end, {'i', 's'}),
-            ['<S-Tab>'] = cmp.mapping(function (fallback)
-                if cmp.visible() then
-                    cmp.confirm({
-                        behavior = cmp.ConfirmBehavior.Insert,
-                        select = true,
-                    })
-                elseif luasnip.jumpable(-1) then
-                    luasnip.jump(-1)
-                else
-                    fallback()
-                end
-            end, {'i', 's'})
-        },
-        sources = {
-            { name = "nvim_lsp", max_item_count = 2},
-            { name = "buffer", max_item_count = 4},
-            { name = "luasnip"},
-        },
-    })
-end)
-
 -- LSP 
 later(function()
     add({ source = "neovim/nvim-lspconfig" })
@@ -108,18 +32,19 @@ later(function()
     }
 
     local on_attach = function(client)
+        vim.opt.omnifunc = 'v:lua.MiniCompletion.completefunc_lsp'
         vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
         vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {})
-        -- vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, {})
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
         vim.keymap.set('n', '<leader>zz', vim.lsp.buf.format, {})
         vim.keymap.set('n', '<leader>j', vim.diagnostic.goto_next, {})
         vim.keymap.set('n', '<leader>k', vim.diagnostic.goto_prev, {})
     end
-    
-    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true -- Optional, if you want snippet support
+
     local lspconfig = require('lspconfig')
     lspconfig.gopls.setup({
         on_attach = on_attach,
@@ -145,3 +70,29 @@ later(function()
     })
 
 end)
+
+later(
+function() 
+    require("mini.completion").setup(
+    {
+        delay = { completion = 100, info = 100, signature = 50 },
+
+        window = {
+            info = { height = 25, width = 80, border = 'none' },
+            signature = { height = 25, width = 80, border = 'none' },
+        },
+        lsp_completion = {
+            source_func = 'omnifunc',
+            auto_setup = false,
+        },
+        fallback_action = '<C-x><C-n>',
+        mappings = {
+            force_twostep = '<C-Space>', -- Force two-step completion
+            force_fallback = '<A-Space>', -- Force fallback completion
+        },
+        set_vim_settings = true,
+    }
+
+    )
+end
+)
