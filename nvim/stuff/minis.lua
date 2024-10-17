@@ -30,8 +30,10 @@ later(function()
     })
 end)
 later(function() require("mini.extra").setup({}) end)
+
 -- Jump
-later(function() require("mini.jump2d").setup({ silent=true }) end)
+-- later(function() require("mini.jump2d").setup({ silent=true }) end)
+
 -- Move text
 later(function() require("mini.move").setup() end)
 -- Pairs

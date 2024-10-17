@@ -15,7 +15,7 @@ if not vim.loop.fs_stat(mini_path) then
     vim.cmd('echo "Installed `mini.nvim`" | redraw')
 end
 
-require("stuff.settings")
-require("stuff.mappings")
 require("stuff.minis")
 require("stuff.completions")
+require("stuff.settings")
+require("stuff.mappings")
