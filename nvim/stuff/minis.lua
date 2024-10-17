@@ -41,6 +41,15 @@ later(function() require("mini.splitjoin").setup({mappings = {toggle = 'ms'}}) e
 -- Surround
 later(function() require("mini.surround").setup({silent=true}) end)
 -- Pick
-later(function() require("mini.pick").setup({silent=true, mappings = { move_down = '<C-j>', move_up = '<C-k>', move_start = '<C-g>', }}) end)
+later(function() require("mini.pick").setup({
+    silent=true,
+    mappings = {
+        move_down = '<C-j>',
+        move_up = '<C-k>',
+        move_start = '<C-g>',
+        caret_left = '<M-h>',
+        caret_right = '<M-l>',
+    }
+}) end)
 -- Files
 later(function() require("mini.files").setup({}) end)

@@ -42,29 +42,29 @@ later(function()
         vim.keymap.set('n', '<leader>j', vim.diagnostic.goto_next, {})
         vim.keymap.set('n', '<leader>k', vim.diagnostic.goto_prev, {})
     end
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true -- Optional, if you want snippet support
+    -- local capabilities = vim.lsp.protocol.make_client_capabilities()
+    -- capabilities.textDocument.completion.completionItem.snippetSupport = true -- Optional, if you want snippet support
 
     local lspconfig = require('lspconfig')
     lspconfig.gopls.setup({
         on_attach = on_attach,
-        capabilities = capabilities,
+        -- capabilities = capabilities,
     })
 
     lspconfig.rust_analyzer.setup({
         on_attach = on_attach,
-        capabilities = capabilities,
+        -- capabilities = capabilities,
     })
 
     lspconfig.templ.setup({
         on_attach = on_attach,
-        capabilities = capabilities,
+        -- capabilities = capabilities,
     })
 
     lspconfig.ts_ls.setup({
         on_attach = on_attach,
         hostInfo = "neovim",
-        capabilities = capabilities,
+        -- capabilities = capabilities,
         filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
         cmd = { "typescript-language-server", "--stdio" }
     })
@@ -78,8 +78,8 @@ function()
         delay = { completion = 100, info = 100, signature = 50 },
 
         window = {
-            info = { height = 25, width = 80, border = 'none' },
-            signature = { height = 25, width = 80, border = 'none' },
+            info = { height = 25, width = 80, border = 'single' },
+            signature = { height = 25, width = 80, border = 'single' },
         },
         lsp_completion = {
             source_func = 'omnifunc',
@@ -90,9 +90,8 @@ function()
             force_twostep = '<C-Space>', -- Force two-step completion
             force_fallback = '<A-Space>', -- Force fallback completion
         },
-        set_vim_settings = true,
+        set_vim_settings = false,
     }
-
     )
 end
 )
