@@ -1,5 +1,5 @@
 vim.o.completeopt = 'menuone,noinsert'
-vim.notify("Hello, Neovim!")
+vim.o.scrolloff = 10
 vim.o.swapfile = false
 vim.o.guifont = "JetBrains Mono:h18"
 vim.opt.laststatus = 3
@@ -14,7 +14,7 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.wrap = true
 vim.wo.signcolumn = 'yes'
-vim.wo.cursorline = false
+vim.wo.cursorline = true
 vim.o.smartindent = true
 vim.o.autoindent = true
 vim.o.linebreak = true

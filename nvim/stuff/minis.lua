@@ -35,7 +35,20 @@ later(function() require("mini.extra").setup({}) end)
 -- later(function() require("mini.jump2d").setup({ silent=true }) end)
 
 -- Move text
-later(function() require("mini.move").setup() end)
+later(function() require("mini.move").setup({
+    mappings = {
+         left = '<C-S-H>',
+    right = '<C-S-L>',
+    down = '<C-S-J>',
+    up = '<C-S-K>',
+
+    -- Move current line in Normal mode
+    line_left = '<C-S-H>',
+    line_right = '<C-S-L>',
+    line_down = '<C-S-J>',
+    line_up = '<C-S-K>',
+    }
+}) end)
 -- Pairs
 later(function() require("mini.pairs").setup() end)
 -- Split Join

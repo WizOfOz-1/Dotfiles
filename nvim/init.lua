@@ -16,6 +16,6 @@ if not vim.loop.fs_stat(mini_path) then
 end
 
 require("stuff.minis")
-require("stuff.completions")
+require("stuff.customs")
 require("stuff.settings")
 require("stuff.mappings")
